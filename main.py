@@ -7,11 +7,20 @@ from mxnet import gluon, autograd
 from mxnet.gluon import nn, rnn
 import sklearn
 from sklearn.utils import shuffle
-import matplotlib.pyplot as plt
+
 
 from language_model import get_batch, detach, update_model, update_structure, update_params, sparsify_params, grad_loss, prior
 from eval import train_eval_loss, train_eval_ppl, test_eval_loss, test_eval_ppl
 from prediction import params_ave, get_ave_param
+
+
+args_data = "./data/ptb."
+args_emsize = 100
+args_nhid = 200
+args_nlayers = 2
+args_clip = 0.5
+args_batch_size = 32
+args_bptt = 100
 
 
 #define shape of parameters
